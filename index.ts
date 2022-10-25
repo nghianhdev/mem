@@ -212,3 +212,12 @@ export function memClear(fn: AnyFunction): void {
 
 	cache.clear();
 }
+
+/**
+Clear all cached data.
+
+@param fn - Memoized function.
+*/
+export function memClearAll(): void {
+	cacheStore = new WeakMap<AnyFunction, CacheStorage<any, any>>();
+}
